@@ -90,3 +90,9 @@ ___
 - DataView (plugin)
 - [Tasks](https://publish.obsidian.md/tasks/Introduction) (plugin)
   ![[tasks_settings_date.png]]
+
+## Waiting и daily v2
+
+Для разделения действий и ожиданий используйте [daily v2](templates/daily-v2.md) и [инструкцию установки](README.md#установка-daily-v2). Waiting: свободный символ `w`, тип `ON_HOLD`, следующий статус — Todo (пробел).
+
+`not done` включает ON_HOLD. В старом Unfinished добавьте `status.type is not ON_HOLD`, если ожидания должны быть отдельно. Исторические заметки автоматически не изменяются. `show tree` может показать Waiting под активным родителем; в v2 задачи выводятся отдельно с сохранением исходного Markdown.

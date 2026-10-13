@@ -12,6 +12,7 @@
 >[!warning] Unfinished
 >```tasks
 >not done
+>status.type is not ON_HOLD
 >(heading includes work) AND (path does not include daily/{{title}}) AND (description regex matches /\S/i) AND ((scheduled before {{title}}) OR (has due date) OR (has start date)) AND (status.type is not IN_PROGRESS)
 >sort by priority
 >sort by scheduled
@@ -34,6 +35,7 @@
 >[!warning] Unfinished
 >```tasks
 >not done
+>status.type is not ON_HOLD
 >(heading includes todo.family) AND (path does not include daily/{{title}}) AND (description regex matches /\S/i) AND ((scheduled before {{title}}) OR (has due date) OR (has start date)) AND (status.type is not IN_PROGRESS)
 >sort by priority
 >sort by scheduled
@@ -56,6 +58,7 @@
 >[!warning] Unfinished
 >```tasks
 >not done
+>status.type is not ON_HOLD
 >(heading includes life) AND (path does not include daily/{{title}}) AND (description regex matches /\S/i) AND ((scheduled before {{title}}) OR (has due date) OR (has start date)) AND (status.type is not IN_PROGRESS)
 >sort by priority
 >sort by scheduled
@@ -78,6 +81,7 @@
 >[!warning] Unfinished
 >```tasks
 >not done
+>status.type is not ON_HOLD
 >(heading includes hobbies) AND (path does not include daily/{{title}}) AND (description regex matches /\S/i) AND ((scheduled before {{title}}) OR (has due date) OR (has start date)) AND (status.type is not IN_PROGRESS)
 >sort by priority
 >sort by scheduled
