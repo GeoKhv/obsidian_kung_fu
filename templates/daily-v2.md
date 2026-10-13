@@ -12,9 +12,9 @@
 > filter by function !(task.tags.some(tag => /^#personal(?:\/|$)/i.test(tag)) || ['personal', 'todo.family', 'life', 'hobbies'].some(section => (task.heading ?? '').toLowerCase().includes(section)))
 > filter by function !['Information', 'Idea', 'Question'].includes(task.status.name)
 > hide tree
-> show toolbar
+> hide toolbar
 > hide task count
-> group by function task.tags.length > 0 ? task.tags.sort().join(", ") : "Без тегов"
+> group by function task.tags.length > 0 ? task.tags.sort().join(", ") : ""
 > sort by function \
 >   const important = task.priorityNumber <= 1; \
 >   const due = task.due.moment; \
@@ -35,11 +35,11 @@
 > filter by function !(task.tags.some(tag => /^#personal(?:\/|$)/i.test(tag)) || ['personal', 'todo.family', 'life', 'hobbies'].some(section => (task.heading ?? '').toLowerCase().includes(section)))
 > filter by function !['Information', 'Idea', 'Question'].includes(task.status.name)
 > hide tree
-> show toolbar
+> hide toolbar
 > hide task count
 > hide scheduled date
 > hide postpone button
-> group by function task.tags.length > 0 ? task.tags.sort().join(", ") : "Без тегов"
+> group by function task.tags.length > 0 ? task.tags.sort().join(", ") : ""
 > sort by priority
 > sort by description
 > ```
@@ -54,9 +54,9 @@
 > filter by function !(task.tags.some(tag => /^#personal(?:\/|$)/i.test(tag)) || ['personal', 'todo.family', 'life', 'hobbies'].some(section => (task.heading ?? '').toLowerCase().includes(section)))
 > filter by function !['Information', 'Idea', 'Question'].includes(task.status.name)
 > hide tree
-> show toolbar
+> hide toolbar
 > hide task count
-> group by function task.tags.length > 0 ? task.tags.sort().join(", ") : "Без тегов"
+> group by function task.tags.length > 0 ? task.tags.sort().join(", ") : ""
 > sort by function \
 >   const important = task.priorityNumber <= 1; \
 >   const due = task.due.moment; \
@@ -70,6 +70,7 @@
 
 >[!question] IDEA
 >```tasks
+> hide toolbar
 >(description regex matches /\S/i)
 >filter by function task.status.name === 'Information' || task.status.name === 'Idea' || task.status.name === 'Question' || task.status.name === 'Important'
 >sort by function task.status.name == "Important" ? 0 : task.status.name == "Idea" ? 4 : task.status.name == "Information" ? 5 : 3
@@ -82,6 +83,7 @@
 
 >[!success]- Finished
 >```tasks
+> hide toolbar
 >((status.type is DONE) AND (done on {{query.file.filenameWithoutExtension}})) OR ((status.type is CANCELLED) AND (cancelled on {{query.file.filenameWithoutExtension}}))
 >description regex matches /\S/i
 >sort by priority
@@ -103,7 +105,7 @@
 > filter by function task.tags.some(tag => /^#personal(?:\/|$)/i.test(tag)) || ['personal', 'todo.family', 'life', 'hobbies'].some(section => (task.heading ?? '').toLowerCase().includes(section))
 > filter by function !['Information', 'Idea', 'Question'].includes(task.status.name)
 > hide tree
-> show toolbar
+> hide toolbar
 > hide backlink
 > hide task count
 > group by function ['personal', 'todo.family', 'life', 'hobbies'].some(section => (task.heading ?? '').toLowerCase().includes(section)) ? task.heading : "Личное"
@@ -121,7 +123,7 @@
 > filter by function task.tags.some(tag => /^#personal(?:\/|$)/i.test(tag)) || ['personal', 'todo.family', 'life', 'hobbies'].some(section => (task.heading ?? '').toLowerCase().includes(section))
 > filter by function !['Information', 'Idea', 'Question'].includes(task.status.name)
 > hide tree
-> show toolbar
+> hide toolbar
 > hide backlink
 > hide task count
 > hide scheduled date
