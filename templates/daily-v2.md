@@ -2,7 +2,7 @@
 
 ## Work
 
-> [!DO] WORK — В работе
+> [!DO|task-progress] WORK — В работе
 > ```tasks
 > status.type is IN_PROGRESS
 > description regex matches /\S/i
@@ -26,7 +26,7 @@
 > sort by description
 > ```
 
-> [!wait] WORK — Ожидаю ответа / результата
+> [!wait|task-waiting] WORK — Ожидаю ответа / результата
 > ```tasks
 > status.type is ON_HOLD
 > description regex matches /\S/i
@@ -44,7 +44,7 @@
 > sort by description
 > ```
 
-> [!DO] WORK — Мои действия
+> [!DO|task-todo] WORK — Мои действия
 > ```tasks
 > status.type is TODO
 > description regex matches /\S/i
@@ -94,7 +94,7 @@
 
 - [ ] 
 
-> [!TODO] PERSONAL — Мои действия
+> [!TODO|task-todo] PERSONAL — Мои действия
 > ```tasks
 > (status.type is TODO) OR (status.type is IN_PROGRESS)
 > description regex matches /\S/i
@@ -113,7 +113,7 @@
 > sort by description
 > ```
 
-> [!wait] PERSONAL — Ожидаю ответа / результата
+> [!wait|task-waiting] PERSONAL — Ожидаю ответа / результата
 > ```tasks
 > status.type is ON_HOLD
 > description regex matches /\S/i

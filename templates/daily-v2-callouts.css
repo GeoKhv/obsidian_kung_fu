@@ -1,0 +1,51 @@
+/* Daily v2 task block colors. Copy to the vault CSS snippets folder. */
+/* Colors are scoped to explicit metadata; other callouts stay unchanged. */
+.callout[data-callout-metadata="task-progress"] {
+  --callout-color: 136, 192, 208;
+  --task-block-background: #294455;
+}
+
+.callout[data-callout-metadata="task-waiting"] {
+  --callout-color: 235, 203, 139;
+  --task-block-background: #55432a;
+}
+
+.callout[data-callout-metadata="task-todo"] {
+  --callout-color: 163, 190, 140;
+  --task-block-background: #344c36;
+}
+
+.callout:is(
+  [data-callout-metadata="task-progress"],
+  [data-callout-metadata="task-waiting"],
+  [data-callout-metadata="task-todo"]
+) {
+  background-color: var(--task-block-background);
+  --h4-color: rgb(var(--callout-color));
+  --h5-color: rgb(var(--callout-color));
+  --h6-color: rgb(var(--callout-color));
+}
+
+.callout:is(
+  [data-callout-metadata="task-progress"],
+  [data-callout-metadata="task-waiting"],
+  [data-callout-metadata="task-todo"]
+) > .callout-title {
+  color: rgb(var(--callout-color));
+}
+
+/* Light-theme equivalents keep the same roles with readable title colors. */
+.theme-light .callout[data-callout-metadata="task-progress"] {
+  --callout-color: 44, 101, 125;
+  --task-block-background: #eaf2f7;
+}
+
+.theme-light .callout[data-callout-metadata="task-waiting"] {
+  --callout-color: 114, 83, 24;
+  --task-block-background: #f7efd9;
+}
+
+.theme-light .callout[data-callout-metadata="task-todo"] {
+  --callout-color: 71, 101, 59;
+  --task-block-background: #eaf2e5;
+}
