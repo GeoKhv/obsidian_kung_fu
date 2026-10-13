@@ -2,9 +2,9 @@
 
 ## Work
 
-> [!DO] WORK — Мои действия
+> [!DO] WORK — В работе
 > ```tasks
-> (status.type is TODO) OR (status.type is IN_PROGRESS)
+> status.type is IN_PROGRESS
 > description regex matches /\S/i
 > starts on or before {{title}}
 > filter by function task.file.path === query.file.path || (task.heading ?? '').toLowerCase().includes('work') || /^daily(?:\/|$)/i.test(task.file.path)
@@ -14,7 +14,6 @@
 > hide tree
 > show toolbar
 > hide task count
-> group by function task.status.name === "In Progress" ? "%%1%% ▶️ In Progress" : "%%2%% ──────────"
 > group by function task.tags.length > 0 ? task.tags.sort().join(", ") : "Без тегов"
 > sort by function \
 >   const important = task.priorityNumber <= 1; \
@@ -42,6 +41,30 @@
 > hide postpone button
 > group by function task.tags.length > 0 ? task.tags.sort().join(", ") : "Без тегов"
 > sort by priority
+> sort by description
+> ```
+
+> [!DO] WORK — Мои действия
+> ```tasks
+> status.type is TODO
+> description regex matches /\S/i
+> starts on or before {{title}}
+> filter by function task.file.path === query.file.path || (task.heading ?? '').toLowerCase().includes('work') || /^daily(?:\/|$)/i.test(task.file.path)
+> filter by function !/(^|\/)(archive|templates)(\/|$)/i.test(task.file.path)
+> filter by function !(task.tags.some(tag => /^#personal(?:\/|$)/i.test(tag)) || ['personal', 'todo.family', 'life', 'hobbies'].some(section => (task.heading ?? '').toLowerCase().includes(section)))
+> filter by function !['Information', 'Idea', 'Question'].includes(task.status.name)
+> hide tree
+> show toolbar
+> hide task count
+> group by function task.tags.length > 0 ? task.tags.sort().join(", ") : "Без тегов"
+> sort by function \
+>   const important = task.priorityNumber <= 1; \
+>   const due = task.due.moment; \
+>   const urgentThrough = moment("{{title}}", "YYYY-MM-DD", true).add(1, "day"); \
+>   const urgent = !!due && due.isSameOrBefore(urgentThrough, "day"); \
+>   return important && urgent ? 0 : important ? 1 : urgent ? 2 : 3;
+> sort by priority
+> sort by due
 > sort by description
 > ```
 
