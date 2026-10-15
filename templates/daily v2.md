@@ -7,7 +7,7 @@
 > status.type is IN_PROGRESS
 > description regex matches /\S/i
 > starts on or before {{title}}
-> filter by function task.file.path === query.file.path || (task.heading ?? '').toLowerCase().includes('work') || task.file.path.toLowerCase().includes('alfa/wrk')
+> filter by function task.file.path === query.file.path || (task.heading ?? '').toLowerCase().includes('work') || /^daily(?:\/|$)/i.test(task.file.path)
 > filter by function !/(^|\/)(archive|templates)(\/|$)/i.test(task.file.path)
 > filter by function !(task.tags.some(tag => /^#personal(?:\/|$)/i.test(tag)) || ['personal', 'todo.family', 'life', 'hobbies'].some(section => (task.heading ?? '').toLowerCase().includes(section)))
 > filter by function !['Information', 'Idea', 'Question'].includes(task.status.name)
@@ -30,7 +30,7 @@
 > ```tasks
 > status.type is ON_HOLD
 > description regex matches /\S/i
-> filter by function task.file.path === query.file.path || (task.heading ?? '').toLowerCase().includes('work') || task.file.path.toLowerCase().includes('alfa/wrk')
+> filter by function task.file.path === query.file.path || (task.heading ?? '').toLowerCase().includes('work') || /^daily(?:\/|$)/i.test(task.file.path)
 > filter by function !/(^|\/)(archive|templates)(\/|$)/i.test(task.file.path)
 > filter by function !(task.tags.some(tag => /^#personal(?:\/|$)/i.test(tag)) || ['personal', 'todo.family', 'life', 'hobbies'].some(section => (task.heading ?? '').toLowerCase().includes(section)))
 > filter by function !['Information', 'Idea', 'Question'].includes(task.status.name)
@@ -49,7 +49,7 @@
 > status.type is TODO
 > description regex matches /\S/i
 > starts on or before {{title}}
-> filter by function task.file.path === query.file.path || (task.heading ?? '').toLowerCase().includes('work') || task.file.path.toLowerCase().includes('alfa/wrk')
+> filter by function task.file.path === query.file.path || (task.heading ?? '').toLowerCase().includes('work') || /^daily(?:\/|$)/i.test(task.file.path)
 > filter by function !/(^|\/)(archive|templates)(\/|$)/i.test(task.file.path)
 > filter by function !(task.tags.some(tag => /^#personal(?:\/|$)/i.test(tag)) || ['personal', 'todo.family', 'life', 'hobbies'].some(section => (task.heading ?? '').toLowerCase().includes(section)))
 > filter by function !['Information', 'Idea', 'Question'].includes(task.status.name)

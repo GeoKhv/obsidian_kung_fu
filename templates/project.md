@@ -7,6 +7,7 @@ performers:
 >[!warning] Unfinished
 >```tasks
 >not done
+>status.type is not ON_HOLD
 >(description includes {{title}}) AND (status.type is not NON_TASK) AND (description regex matches /\S/i)
 >sort by priority
 >sort by scheduled

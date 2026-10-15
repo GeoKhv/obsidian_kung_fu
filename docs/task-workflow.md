@@ -5,11 +5,11 @@
 1. Включить встроенный Daily Notes. Формат имени: `YYYY-MM-DD`.
 2. Установить [Tasks](https://github.com/obsidian-tasks-group/obsidian-tasks).
 3. Установить [Daily Checkbox Focus](https://obsidian.md/plugins?id=daily-checkbox-focus) и [Tasks Inline Edit](https://obsidian.md/plugins?id=tasks-inline-edit) из официального каталога: **Настройки → Сторонние плагины → Обзор**. Найти плагин по названию, установить и включить. Для ручной установки доступны GitHub Releases: [Daily Checkbox Focus](https://github.com/GeoKhv/obsidian-daily-checkbox-focus/releases/latest), [Tasks Inline Edit](https://github.com/GeoKhv/obsidian-tasks-inline-edit/releases/latest).
-4. Скопировать [daily v2.md](../templates/daily%20v2.md) в папку шаблонов и выбрать его в Daily Notes. У меня ежедневники лежат в `Alfa/WRK`.
+4. Скопировать [daily-v2.md](../templates/daily-v2.md) в папку шаблонов и выбрать его в Daily Notes. Для публичного шаблона используйте папку `daily`.
 5. Скопировать [Daily Task Blocks.css](../snippets/Daily%20Task%20Blocks.css) в `.obsidian/snippets/` и включить его в настройках оформления.
 6. Настроить статусы Tasks и определение плановой даты по имени файла, как описано ниже.
 
-Шаблон содержит мой путь `alfa/wrk` в фильтрах. Для другой папки его нужно заменить. Для фильтров личных задач используются `#personal` и заголовки `personal`, `todo.family`, `life`, `hobbies`.
+Шаблон использует папку `daily` в трёх WORK-фильтрах. Для другой папки замените `/^daily(?:\/|$)/i.test(task.file.path)` во всех трёх запросах; например, для `journal/daily` используйте `/^journal\/daily(?:\/|$)/i.test(task.file.path)`. Для фильтров личных задач используются `#personal` и заголовки `personal`, `todo.family`, `life`, `hobbies`.
 
 ## Статусы Tasks
 
