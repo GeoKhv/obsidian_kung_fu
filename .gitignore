@@ -7,3 +7,11 @@
 !/templates/
 !/data_views/
 !/files/
+
+# Public task-workflow documentation and presentation only
+!/docs/
+/docs/*
+!/docs/task-workflow.md
+!/snippets/
+/snippets/*
+!/snippets/Daily Task Blocks.css

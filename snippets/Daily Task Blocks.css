@@ -1,0 +1,142 @@
+/* Daily v2 task block colors. Copy to the vault CSS snippets folder. */
+/* Colors are scoped to explicit metadata; other callouts stay unchanged. */
+.callout[data-callout-metadata="task-progress"] {
+  --callout-color: 136, 192, 208;
+  --task-block-background: #294455;
+}
+
+.callout[data-callout-metadata="task-waiting"] {
+  --callout-color: 235, 203, 139;
+  --task-block-background: #55432a;
+}
+
+.callout[data-callout-metadata="task-todo"] {
+  --callout-color: 163, 190, 140;
+  --task-block-background: #344c36;
+}
+
+.callout:is(
+  [data-callout-metadata="task-progress"],
+  [data-callout-metadata="task-waiting"],
+  [data-callout-metadata="task-todo"]
+) {
+  background-color: var(--task-block-background);
+  --h4-color: rgb(var(--callout-color));
+  --h5-color: rgb(var(--callout-color));
+  --h6-color: rgb(var(--callout-color));
+}
+
+.callout:is(
+  [data-callout-metadata="task-progress"],
+  [data-callout-metadata="task-waiting"],
+  [data-callout-metadata="task-todo"]
+) > .callout-title {
+  color: rgb(var(--callout-color));
+}
+
+/* Light-theme equivalents keep the same roles with readable title colors. */
+.theme-light .callout[data-callout-metadata="task-progress"] {
+  --callout-color: 44, 101, 125;
+  --task-block-background: #eaf2f7;
+}
+
+.theme-light .callout[data-callout-metadata="task-waiting"] {
+  --callout-color: 114, 83, 24;
+  --task-block-background: #f7efd9;
+}
+
+.theme-light .callout[data-callout-metadata="task-todo"] {
+  --callout-color: 71, 101, 59;
+  --task-block-background: #eaf2e5;
+}
+
+/* Status icons: outline circle-play for In Progress, clock for Waiting. */
+/* CSS only: preserves native checkboxes, task text, and click behavior. */
+/* Specificity guard overrides older checkbox snippets without changing them. */
+body {
+  --daily-status-progress-color: #88c0d0;
+  --daily-status-waiting-color: #ebcb8b;
+  --daily-status-icon-size: 20px;
+}
+
+body.theme-light {
+  --daily-status-progress-color: #2c657d;
+  --daily-status-waiting-color: #725318;
+}
+
+body:not(#daily-task-status-icons-disabled) :is(
+  .task-list-item:is([data-task="/"], [data-task-status-type="IN_PROGRESS"]) > input[type="checkbox"],
+  .task-list-item:is([data-task="/"], [data-task-status-type="IN_PROGRESS"]) > p > input[type="checkbox"],
+  .HyperMD-task-line[data-task="/"] input.task-list-item-checkbox,
+  input.task-list-item-checkbox[data-task="/"]
+) {
+  --daily-status-color: var(--daily-status-progress-color);
+  --daily-status-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m10 8 6 4-6 4Z'/%3E%3C/svg%3E");
+}
+
+body:not(#daily-task-status-icons-disabled) :is(
+  .task-list-item:is([data-task="w"], [data-task-status-type="ON_HOLD"]) > input[type="checkbox"],
+  .task-list-item:is([data-task="w"], [data-task-status-type="ON_HOLD"]) > p > input[type="checkbox"],
+  .HyperMD-task-line[data-task="w"] input.task-list-item-checkbox,
+  input.task-list-item-checkbox[data-task="w"]
+) {
+  --daily-status-color: var(--daily-status-waiting-color);
+  --daily-status-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 8v4h4'/%3E%3C/svg%3E");
+}
+
+body:not(#daily-task-status-icons-disabled) :is(
+  .task-list-item:is([data-task="/"], [data-task="w"], [data-task-status-type="IN_PROGRESS"], [data-task-status-type="ON_HOLD"]) > input[type="checkbox"],
+  .task-list-item:is([data-task="/"], [data-task="w"], [data-task-status-type="IN_PROGRESS"], [data-task-status-type="ON_HOLD"]) > p > input[type="checkbox"],
+  .HyperMD-task-line:is([data-task="/"], [data-task="w"]) input.task-list-item-checkbox,
+  input.task-list-item-checkbox:is([data-task="/"], [data-task="w"])
+) {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  position: relative !important;
+  width: var(--daily-status-icon-size) !important;
+  height: var(--daily-status-icon-size) !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--daily-status-color) !important;
+  vertical-align: middle;
+}
+
+body:not(#daily-task-status-icons-disabled) :is(
+  .task-list-item:is([data-task="/"], [data-task="w"], [data-task-status-type="IN_PROGRESS"], [data-task-status-type="ON_HOLD"]) > input[type="checkbox"],
+  .task-list-item:is([data-task="/"], [data-task="w"], [data-task-status-type="IN_PROGRESS"], [data-task-status-type="ON_HOLD"]) > p > input[type="checkbox"],
+  .HyperMD-task-line:is([data-task="/"], [data-task="w"]) input.task-list-item-checkbox,
+  input.task-list-item-checkbox:is([data-task="/"], [data-task="w"])
+)::before {
+  content: none !important;
+  display: none !important;
+}
+
+body:not(#daily-task-status-icons-disabled) :is(
+  .task-list-item:is([data-task="/"], [data-task="w"], [data-task-status-type="IN_PROGRESS"], [data-task-status-type="ON_HOLD"]) > input[type="checkbox"],
+  .task-list-item:is([data-task="/"], [data-task="w"], [data-task-status-type="IN_PROGRESS"], [data-task-status-type="ON_HOLD"]) > p > input[type="checkbox"],
+  .HyperMD-task-line:is([data-task="/"], [data-task="w"]) input.task-list-item-checkbox,
+  input.task-list-item-checkbox:is([data-task="/"], [data-task="w"])
+)::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  border: 0 !important;
+  transform: none !important;
+  background: currentColor !important;
+  -webkit-mask-image: var(--daily-status-mask) !important;
+  mask-image: var(--daily-status-mask) !important;
+  -webkit-mask-size: contain !important;
+  mask-size: contain !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+  -webkit-mask-position: center !important;
+  mask-position: center !important;
+  pointer-events: none;
+}
