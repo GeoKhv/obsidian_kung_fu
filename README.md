@@ -6,10 +6,10 @@
 
 ## Мои плагины
 
-| Плагин | Что делает | Скачать |
+| Плагин | Что делает | Установка и исходники |
 | --- | --- | --- |
-| [Daily Checkbox Focus](https://github.com/GeoKhv/obsidian-daily-checkbox-focus) | При открытии ежедневника ставит курсор в первый пустой чекбокс. По умолчанию ищет его до первого заголовка и добавляет, если такого чекбокса нет. Можно сразу писать новую задачу. | [Релизы](https://github.com/GeoKhv/obsidian-daily-checkbox-focus/releases/latest) |
-| [Tasks Inline Edit](https://github.com/GeoKhv/obsidian-tasks-inline-edit) | Позволяет менять текст задачи прямо в результатах Tasks. Показывает под подзадачей цепочку родителей, даже если они находятся в других списках по статусу. Клик по родителю открывает его строку в редакторе. | [Релизы](https://github.com/GeoKhv/obsidian-tasks-inline-edit/releases/latest) |
+| [Daily Checkbox Focus](https://obsidian.md/plugins?id=daily-checkbox-focus) | При открытии ежедневника ставит курсор в первый пустой чекбокс. По умолчанию ищет его до первого заголовка и добавляет, если такого чекбокса нет. Можно сразу писать новую задачу. | [Каталог Obsidian](https://obsidian.md/plugins?id=daily-checkbox-focus) · [GitHub](https://github.com/GeoKhv/obsidian-daily-checkbox-focus) · [Релизы](https://github.com/GeoKhv/obsidian-daily-checkbox-focus/releases/latest) |
+| [Tasks Inline Edit](https://obsidian.md/plugins?id=tasks-inline-edit) | Позволяет менять текст задачи прямо в результатах Tasks. Показывает под подзадачей цепочку родителей, даже если они находятся в других списках по статусу. Клик по родителю открывает его строку в редакторе. | [Каталог Obsidian](https://obsidian.md/plugins?id=tasks-inline-edit) · [GitHub](https://github.com/GeoKhv/obsidian-tasks-inline-edit) · [Релизы](https://github.com/GeoKhv/obsidian-tasks-inline-edit/releases/latest) |
 
 В Tasks Inline Edit контекст включён по умолчанию. Его можно выключить в **Настройки → Tasks Inline Edit → Показывать контекст родительских задач**. Настройка применяется сразу и сохраняется после перезапуска.
 
@@ -33,8 +33,8 @@
 | [Tasks](https://github.com/obsidian-tasks-group/obsidian-tasks) | Статусы, даты, приоритеты, фильтры, сортировка и результаты запросов. |
 | [Daily Notes](https://help.obsidian.md/plugins/daily-notes) | Создание и открытие ежедневников с именем `YYYY-MM-DD` по выбранному шаблону. |
 | [Шаблон daily v2](templates/daily%20v2.md) | Верхняя область ввода, WORK/PERSONAL, запросы по статусам, IDEA и Finished. |
-| Daily Checkbox Focus | Фокус на пустом чекбоксе для быстрого ввода. Не зависит от Tasks. |
-| Tasks Inline Edit | Правка текста в выдаче Tasks и контекст подзадач. Требует Tasks. |
+| [Daily Checkbox Focus](https://obsidian.md/plugins?id=daily-checkbox-focus) | Фокус на пустом чекбоксе для быстрого ввода. Не зависит от Tasks. |
+| [Tasks Inline Edit](https://obsidian.md/plugins?id=tasks-inline-edit) | Правка текста в выдаче Tasks и контекст подзадач. Требует Tasks. |
 | [Daily Task Blocks.css](snippets/Daily%20Task%20Blocks.css) | Цвета блоков и иконки «В работе» / «Ожидание». |
 | Obsidian Nord + Style Settings + S - Checkboxes | Тема и дополнительные настройки оформления моей установки. |
 
